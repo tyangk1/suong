@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SƯƠNG — Trà của sương sớm</title>
+  <meta name="description" content="SƯƠNG: bốn loại trà Việt hái lúc sương chưa tan — Lục trà Thái Nguyên, Trà Sen Tây Hồ, Shan Tuyết, Ô Long. Xem cách trà được hái, héo, sao, pha, và đặt trước mùa trà mới.">
+  <meta name="theme-color" content="#F3EEE3">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:title" content="SƯƠNG — Trà của sương sớm">
+  <meta property="og:description" content="Bốn loại trà Việt, hái lúc sương chưa tan, kể bằng tranh thuỷ mặc.">
+  <meta property="og:image" content="https://suong.yan.io.vn/assets/og.jpg">
+  <meta property="og:url" content="https://suong.yan.io.vn/">
+  <link rel="canonical" href="https://suong.yan.io.vn/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/brand/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/icon-32.png">
+  <link rel="apple-touch-icon" href="assets/brand/icon-180.png">
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-vietnamese-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/suong.css">
+  <script type="importmap">
+  { "imports": { "gsap": "./vendor/gsap/index.js", "gsap/ScrollTrigger": "./vendor/gsap/ScrollTrigger.js", "lenis": "./vendor/lenis/lenis.js" } }
+  </script>
+  <script type="module" src="js/main.js"></script>
+  <script>
+    // failsafe without modules: if the page scripts never come up (old browser, failed file), lift the loader
+    setTimeout(function () {
+      if (window.__suongReady) return;
+      var l = document.getElementById('loader');
+      if (l) l.remove();
+      document.body.classList.remove('is-loading');
+    }, 4000);
+  </script>
+  <noscript><style>.loader{display:none}body.is-loading{overflow:auto}</style></noscript>
+</head>
+<body class="is-loading">
+  <div class="paper" aria-hidden="true"></div>
+
+  <!-- LOADER: one drop of ink -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg class="loader__bloom" viewBox="-150 -150 300 300">
+      <defs>
+        <filter id="bloomf" x="-150" y="-150" width="300" height="300" filterUnits="userSpaceOnUse">
+          <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="4" result="n"/>
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="38" xChannelSelector="R" yChannelSelector="G"/>
+          <feGaussianBlur stdDeviation="2.5"/>
+        </filter>
+      </defs>
+      <circle cx="0" cy="0" r="4" fill="#1C1B19" filter="url(#bloomf)"/>
+    </svg>
+    <span class="loader__drop"></span>
+    <img class="loader__seal" src="assets/brand/seal-240.webp" alt="" width="240" height="240">
+  </div>
+
+  <header class="hdr">
+    <a class="hdr__brand" href="#top" aria-label="SƯƠNG, về đầu trang">
+      <img src="assets/brand/seal-240.webp" alt="" width="40" height="40">
+      <span>SƯƠNG</span>
+    </a>
+    <nav class="hdr__nav" aria-label="Các phần">
+      <a href="#chuong">Làm trà</a>
+      <a href="#tra">Bốn vị</a>
+      <a href="#pha">Pha trà</a>
+      <a class="hdr__cta" href="#dat">Đặt trước</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero__layers" aria-hidden="true">
+        <img class="layer l-far" data-src="hill-far" alt="" width="2400" height="1018">
+        <div class="mist mist--a"><i></i></div>
+        <img class="layer l-mid" data-src="hill-mid" alt="" width="2400" height="1018">
+        <div class="mist mist--b"><i></i></div>
+        <img class="layer l-near" data-src="hill-near" alt="" width="2400" height="1018">
+        <img class="hero__mobile" src="assets/img/hero-mobile.webp" alt="" width="1000" height="1792" loading="lazy">
+      </div>
+      <div class="hero__copy">
+        <p class="eyebrow">Trà Việt · hái lúc sương chưa tan</p>
+        <h1 class="hero__title">SƯƠNG</h1>
+        <p class="hero__tag">Trà của sương sớm</p>
+      </div>
+      <a class="hero__hint" href="#loi-dau">Cuộn xuống <span aria-hidden="true"></span></a>
+    </section>
+
+    <!-- OPENING -->
+    <section class="opening" id="loi-dau">
+      <img class="opening__drop" src="assets/img/drop-2.webp" alt="" width="240" height="240" loading="lazy">
+      <p class="opening__text">Ở những đồi chè cao hơn nghìn mét, sương nằm trên lá đến gần trưa. SƯƠNG hái chè lúc ấy, sao trên lửa củi, gói bằng giấy dó, rồi gửi tới bạn: bốn vị trà, mỗi vị một vùng núi.</p>
+    </section>
+
+    <!-- CHAPTERS -->
+    <section class="chapters" id="chuong" aria-label="Bốn bước làm trà">
+      <div class="chapters__pin">
+        <article class="ch" data-img="ch-hai">
+          <div class="ch__art" role="img" aria-label="Tranh mực: bàn tay ngắt búp chè, vành nón lá phía trên"></div>
+          <div class="ch__text">
+            <span class="ch__no">Một</span>
+            <h3>Hái</h3>
+            <img class="ch__line" src="assets/img/stroke-1.webp" alt="" width="600" height="60" loading="lazy">
+            <p>Sáu giờ sáng, sương còn đọng trên lá. Người hái chỉ ngắt một tôm hai lá, phần non nhất của búp chè, và để lại phần còn lại cho mùa sau.</p>
+          </div>
+        </article>
+        <article class="ch" data-img="ch-heo">
+          <div class="ch__art" role="img" aria-label="Tranh mực: lá chè tươi rải mỏng trên nong tre"></div>
+          <div class="ch__text">
+            <span class="ch__no">Hai</span>
+            <h3>Héo</h3>
+            <img class="ch__line" src="assets/img/stroke-3.webp" alt="" width="600" height="60" loading="lazy">
+            <p>Lá tươi được rải mỏng trên nong tre cho gió đồi làm héo dần trong vài giờ. Lá mềm đi, và hương bắt đầu thức dậy.</p>
+          </div>
+        </article>
+        <article class="ch" data-img="ch-sao">
+          <div class="ch__art" role="img" aria-label="Tranh mực: đôi tay đảo chè trong chảo gang trên bếp củi"></div>
+          <div class="ch__text">
+            <span class="ch__no">Ba</span>
+            <h3>Sao</h3>
+            <img class="ch__line" src="assets/img/stroke-2.webp" alt="" width="600" height="60" loading="lazy">
+            <p>Chảo gang trên bếp củi, đôi tay đảo liên hồi. Lửa giữ lại màu xanh, cánh chè xoăn lại và thơm mùi cốm.</p>
+          </div>
+        </article>
+        <article class="ch" data-img="ch-pha">
+          <div class="ch__art" role="img" aria-label="Tranh mực: ấm đất rót trà vào chén nhỏ, hơi nước bay lên"></div>
+          <div class="ch__text">
+            <span class="ch__no">Bốn</span>
+            <h3>Pha</h3>
+            <img class="ch__line" src="assets/img/stroke-1.webp" alt="" width="600" height="60" loading="lazy">
+            <p>Tới lượt bạn. Nước sôi để nguội một chút, rót chậm, rồi chờ. Một ấm trà ngon không vội được.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TEAS -->
+    <section class="teas" id="tra" data-tea="luc">
+      <header class="sec-head">
+        <h2>Chọn một chén</h2>
+        <p>Bấm vào tên trà để rót.</p>
+      </header>
+      <div class="teas__grid">
+        <div class="teas__tabs" role="tablist" aria-label="Bốn loại trà">
+          <button role="tab" data-tea="luc" aria-selected="true"><span class="t-name">Lục trà</span><span class="t-origin">Thái Nguyên</span></button>
+          <button role="tab" data-tea="sen" aria-selected="false"><span class="t-name">Trà Sen</span><span class="t-origin">Tây Hồ</span></button>
+          <button role="tab" data-tea="shan" aria-selected="false"><span class="t-name">Shan Tuyết</span><span class="t-origin">Hà Giang</span></button>
+          <button role="tab" data-tea="olong" aria-selected="false"><span class="t-name">Ô Long</span><span class="t-origin">Lâm Đồng</span></button>
+        </div>
+        <div class="teas__photo">
+          <img class="teas__lotus" src="assets/img/lotus.webp" alt="" width="900" height="1117" loading="lazy">
+          <div class="teas__frame">
+            <img class="teas__back" src="assets/img/tea-luc.webp" alt="Gói trà SƯƠNG bọc giấy dó, buộc dây gai" width="900" height="1117" loading="lazy">
+            <div class="teas__front"></div>
+          </div>
+          <div class="teas__leaf"><img src="assets/img/leaf-luc.webp" alt="Cận cảnh lá Lục trà Thái Nguyên" width="760" height="760" loading="lazy"></div>
+        </div>
+        <div class="teas__info" role="tabpanel" aria-live="polite">
+          <svg class="cup" viewBox="0 0 300 300" aria-hidden="true">
+            <defs>
+              <filter id="handf" x="-10%" y="-10%" width="120%" height="120%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="2" result="n"/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/>
+              </filter>
+              <clipPath id="bowl"><path d="M42 120 Q42 252 150 252 Q258 252 258 120 Z"/></clipPath>
+            </defs>
+            <path id="stream" d="M150 -10 C150 40 151 90 150 200" fill="none" stroke="#C9C77E" stroke-width="5" stroke-linecap="round"/>
+            <g clip-path="url(#bowl)">
+              <rect id="liquid" x="0" y="250" width="300" height="200" fill="#C9C77E"/>
+              <ellipse id="surface" cx="150" cy="250" rx="0" ry="0" fill="#C9C77E" style="filter:brightness(1.12)"/>
+            </g>
+            <g filter="url(#handf)" fill="none" stroke="#1C1B19" stroke-linecap="round">
+              <ellipse cx="150" cy="120" rx="108" ry="17" stroke-width="3"/>
+              <path d="M42 120 Q42 252 150 252 Q258 252 258 120" stroke-width="4.5"/>
+              <path d="M112 252 L118 268 L182 268 L188 252" stroke-width="3.5"/>
+            </g>
+          </svg>
+          <h3 data-k="name">Lục trà Thái Nguyên</h3>
+          <p class="teas__origin" data-k="origin">Đồi chè Thái Nguyên</p>
+          <p class="teas__notes" data-k="notes">Hương cốm non, chát dịu đầu lưỡi rồi ngọt dần nơi cổ họng.</p>
+          <dl class="teas__specs">
+            <div><dt>Nước</dt><dd data-k="temp">80°C</dd></div>
+            <div><dt>Trà</dt><dd data-k="grams">5 g</dd></div>
+            <div><dt>Hãm</dt><dd data-k="time">1 phút</dd></div>
+          </dl>
+          <p class="teas__price" data-k="price">180.000đ / 50 g</p>
+          <button class="btn-line teas__pick" type="button">Chọn trà này để đặt trước</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RITUAL -->
+    <section class="rite" id="pha">
+      <header class="sec-head">
+        <h2>Pha một ấm</h2>
+        <p>Bốn bước cho <span data-r="name">Lục trà Thái Nguyên</span>.</p>
+      </header>
+      <svg class="rite__line" aria-hidden="true"><path fill="none" stroke="#1C1B19" stroke-width="2.5" stroke-linecap="round" opacity=".55"/></svg>
+      <ol class="rite__steps">
+        <li class="rite__step">
+          <img class="rite__img" data-src="rite-1" alt="Tranh mực: rót nước sôi tráng ấm đất" width="900" height="900">
+          <div class="rite__txt"><span class="ch__no">Một</span><h3>Tráng ấm</h3><p>Rót nước sôi lên ấm và chén cho nóng đều, rồi đổ đi.</p></div>
+        </li>
+        <li class="rite__step">
+          <img class="rite__img" data-src="rite-2" alt="Tranh mực: muỗng tre đổ lá trà vào ấm" width="900" height="900">
+          <div class="rite__txt"><span class="ch__no">Hai</span><h3>Cho trà</h3><p><span data-r="grams">5 g</span> trà cho một ấm 150 ml. Lắc nhẹ ấm để hương trà dậy.</p></div>
+        </li>
+        <li class="rite__step">
+          <img class="rite__img" data-src="rite-3" alt="Tranh mực: ấm đun rót nước từ trên cao vào ấm trà" width="900" height="900">
+          <div class="rite__txt"><span class="ch__no">Ba</span><h3>Rót nước</h3><p>Nước <span data-r="temp">80°C</span>, rót cao tay cho lá trà xoay trong ấm. Hãm <span data-r="time">1 phút</span>.</p></div>
+        </li>
+        <li class="rite__step">
+          <img class="rite__img" data-src="rite-4" alt="Tranh mực: rót trà ra ba chén nhỏ trên khay gỗ" width="900" height="900">
+          <div class="rite__txt"><span class="ch__no">Bốn</span><h3>Chia chén</h3><p>Rót đều ra từng chén, không để sót giọt nào trong ấm. Lá này pha được <span data-r="steeps">4</span> nước.</p></div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- TEA SET -->
+    <section class="set" id="bo-am">
+      <img class="set__img" data-src="set-still" alt="Bộ ấm chén Sớm: ấm đất nung, ba chén sứ trắng, khay gỗ và muỗng tre" width="1900" height="922">
+      <div class="set__txt">
+        <h2>Bộ ấm chén Sớm</h2>
+        <p>Ấm đất nung mộc, ba chén sứ trắng mỏng, khay gỗ và muỗng tre. Vừa đủ cho một buổi sáng ba người.</p>
+        <p class="set__price">690.000đ</p>
+      </div>
+    </section>
+
+    <!-- PRE-ORDER -->
+    <section class="order" id="dat">
+      <header class="sec-head">
+        <h2>Đặt trước mùa trà mới</h2>
+        <p>Trà hái đầu mùa, sao xong là gói, gửi đi trong tuần.</p>
+      </header>
+      <form class="order__form" id="order" novalidate>
+        <fieldset class="order__teas">
+          <legend>Loại trà</legend>
+          <label><input type="radio" name="tea" value="luc" checked><span>Lục trà Thái Nguyên</span></label>
+          <label><input type="radio" name="tea" value="sen"><span>Trà Sen Tây Hồ</span></label>
+          <label><input type="radio" name="tea" value="shan"><span>Shan Tuyết</span></label>
+          <label><input type="radio" name="tea" value="olong"><span>Ô Long</span></label>
+          <label><input type="radio" name="tea" value="hop"><span>Hộp bốn vị <small>4 gói × 25 g</small></span></label>
+        </fieldset>
+        <fieldset class="order__sizes">
+          <legend>Quy cách</legend>
+          <label><input type="radio" name="size" value="50" checked><span>50 g</span></label>
+          <label><input type="radio" name="size" value="100"><span>100 g</span></label>
+        </fieldset>
+        <fieldset class="order__qty">
+          <legend>Số lượng</legend>
+          <div class="qty">
+            <button type="button" data-step="-1" aria-label="Bớt một">−</button>
+            <input name="qty" type="number" min="1" max="9" value="1" inputmode="numeric" aria-label="Số lượng">
+            <button type="button" data-step="1" aria-label="Thêm một">+</button>
+          </div>
+        </fieldset>
+        <label class="order__set"><input type="checkbox" name="set"><span>Thêm Bộ ấm chén Sớm <small>+690.000đ</small></span></label>
+        <div class="order__sum">
+          <p class="order__line" data-line>1 × Lục trà Thái Nguyên, 50 g</p>
+          <p class="order__total" data-total>180.000đ</p>
+          <button class="btn-seal" type="submit">Đặt trước — sắp mở</button>
+          <p class="order__note" id="orderNote" tabindex="-1" hidden>Cảm ơn bạn. Đặt trước sẽ mở vào mùa trà tới. SƯƠNG chưa nhận tiền và chưa giao hàng, nên bạn chưa phải trả gì.</p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <img class="foot__moon" data-src="moon-hills" alt="" width="2000" height="848">
+    <div class="foot__inner">
+      <img class="foot__seal" src="assets/brand/seal-240.webp" alt="Con dấu SƯƠNG" width="120" height="120" loading="lazy">
+      <p class="foot__line">Trà ngon, không vội.</p>
+      <p class="foot__small">SƯƠNG là thương hiệu trà tự đặt cho một dự án thiết kế. Chưa bán hàng, không thu tiền.<br>Tranh và ảnh tạo bằng AI, xử lý bằng PhotoCraft. © 2026 SƯƠNG.</p>
+    </div>
+  </footer>
+</body>
+</html>

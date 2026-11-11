@@ -1,0 +1,11 @@
+{
+  "track": "audio/track.mp3",
+  "credit": "Atlas • Vietnam — Vadim_Makes_Sound (Pixabay ID 560947, no Content ID on 2026-11-10)",
+  "bpm": 140.79,
+  "frames_per_bar": 51.139,
+  "downbeat_s": 0.786,
+  "track_start_bar": 0,
+  "bars": 28,
+  "fade_out_bars": 2,
+  "scenes": [["s1", 0, 2], ["s2", 2, 5], ["s3", 5, 12], ["s4", 12, 18], ["s5", 18, 22], ["s6", 22, 24], ["s8", 24, 28]]
+}
