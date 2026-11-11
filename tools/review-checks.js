@@ -64,5 +64,20 @@ async (page) => {
     r.T7_noLenisOnTouch = await p.evaluate(() => !document.documentElement.classList.contains('lenis'));
     await ctx.close();
   }
+  // T8 (2026-11-11) no image is stretched: width/height attributes + a CSS width need img{height:auto}.
+  // Live RED before the fix: lotus 121×1117 on phones, ritual paintings 420×900, ink drop 90×240.
+  for (const vp of [{ width: 1440, height: 900 }, { width: 390, height: 844 }]) {
+    const ctx = await ctxOf({ viewport: vp });
+    const p = await ctx.newPage();
+    await p.goto(URL); await p.waitForTimeout(2800);
+    const h = await p.evaluate(() => document.documentElement.scrollHeight);
+    for (let y = 0; y < h; y += 600) { await p.evaluate((y) => scrollTo(0, y), y); await p.waitForTimeout(100); }
+    await p.waitForTimeout(800);
+    r[`T8_stretched_${vp.width}`] = await p.evaluate(() => [...document.images]
+      .filter((i) => i.naturalWidth && i.getBoundingClientRect().width && getComputedStyle(i).objectFit !== 'cover')
+      .filter((i) => { const b = i.getBoundingClientRect(); return Math.abs((b.width / b.height) / (i.naturalWidth / i.naturalHeight) - 1) > 0.03; })
+      .map((i) => i.className));
+    await ctx.close();
+  }
   return r;
 }
